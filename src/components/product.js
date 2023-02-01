@@ -288,9 +288,9 @@ export default class Product extends Component {
   }
 
   get buttonText() {
-    if (this.options.buttonDestination === 'modal') {
-      return this.options.text.button;
-    }
+    // if (this.options.buttonDestination === 'modal') {
+    //   return this.options.text.button;
+    // }
     if (!this.variantExists) {
       return this.options.text.unavailable;
     }
@@ -301,7 +301,7 @@ export default class Product extends Component {
   }
 
   get buttonEnabled() {
-    return this.options.buttonDestination === 'modal' || (this.buttonActionAvailable && this.variantExists && this.variantInStock);
+    return (this.buttonActionAvailable && this.variantExists && this.variantInStock);
   }
 
   get variantExists() {
